@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Body Weight App</title>
+
+    <style>
+      body {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Detail Task</h1>
+
+      <div>
+        <a href="{% url 'bodyweight:index' %}" class="btn btn-success">Kembali ke Daftar</a>
+      </div>
+
+      <br>
+
+      <div>
+        {% load mathfilters %}
+        <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th width="25%">Tanggal</th>
+                <th width="10%">Max</th>
+                <th width="10%">Min</th>
+                <th width="10%">Perbedaan</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ bw.tanggal }}</td>
+              <td>{{ bw.max_val }}</td>
+              <td>{{ bw.min_val }}</td>
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+  </div>
+ 
+  </body>
+</html>
